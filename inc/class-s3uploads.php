@@ -131,8 +131,8 @@ global $wpdb;
 			return true;
 		}
 
-		$to_sync = $wpdb->get_results( $wpdb->prepare( "SELECT file, size FROM `{$wpdb->base_prefix}s3uploads_files` WHERE synced = 0 AND errors < 3 AND transfer_status IS NULL ORDER BY errors ASC, file ASC LIMIT %d", S3UPLOADS_SYNC_PER_LOOP ) );
-		if($to_sync)
+		// $to_sync = $wpdb->get_results( $wpdb->prepare( "SELECT file, size FROM `{$wpdb->base_prefix}s3uploads_files` WHERE synced = 0 AND errors < 3 AND transfer_status IS NULL ORDER BY errors ASC, file ASC LIMIT %d", S3UPLOADS_SYNC_PER_LOOP ) );
+		// if($to_sync)
 			$this->register_stream_wrapper();
 		add_action( 'shutdown', [ $this, 'stream_wrapper_debug' ] );
 
