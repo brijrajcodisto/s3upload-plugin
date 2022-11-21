@@ -15,7 +15,7 @@ class S3Uploads_Api_Handler {
 	 *
 	 * @var string (URL)
 	 */
-	public $server_root = 'https://b2-upload-api.caprover7.mackshost.com/';
+	public $server_root = 'https://s3uploads-api-test.caprover7.mackshost.com/';
 
 	/**
 	 * Path to the REST API on the server.
