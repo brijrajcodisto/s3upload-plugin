@@ -19,6 +19,7 @@ class S3Uploads_Image_Editor_Imagick extends WP_Image_Editor_Imagick {
 	 * @return true|WP_Error True if loaded; WP_Error on failure.
 	 */
 	public function load() {
+		echo 'Load images====>>>>>>>>>>>>>>>>>';
 		if ( $this->image instanceof Imagick ) {
 			return true;
 		}
@@ -52,6 +53,7 @@ class S3Uploads_Image_Editor_Imagick extends WP_Image_Editor_Imagick {
 	 * then copy it to the iu:// path as a workaround.
 	 */
 	protected function _save( $image, $filename = null, $mime_type = null ) {
+		echo 'Save images====>>>>>>>>>>>>>>>>>';
 		list( $filename, $extension, $mime_type ) = $this->get_output_format( $filename, $mime_type );
 
 		if ( ! $filename ) {
