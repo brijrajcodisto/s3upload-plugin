@@ -1,0 +1,34 @@
+{
+  "name": "baghelsoft/s3uploads",
+  "description": "WordPress plugin to store uploads in the cloud and serve via the s3Uploads CDN.",
+  "homepage": "https://github.com/baghelsoft/s3uploads",
+  "keywords": [
+    "wordpress",
+    "cloud",
+    "storage",
+    "s3",
+    "cdn",
+    "plugin"
+  ],
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "BaghelSoft, LLC",
+      "email": "contact@baghelsoft.com",
+      "homepage": "https://baghelsoft.com/"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/baghelsoft/s3uploads/issues",
+    "source": "https://github.com/baghelsoft/s3uploads"
+  },
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "~1.0"
+  },
+  "config": {
+    "platform": {
+      "php": "5.6"
+    }
+  }
+}
