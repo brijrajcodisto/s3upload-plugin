@@ -326,6 +326,7 @@ global $wpdb;
 			$this->original_upload_dir = wp_get_upload_dir();
 		}
 		error_log( sprintf( 'inside get_original_upload_dir ====>>>>>>>>>> %s', $this->original_upload_dir));
+		error_log(print_r($this->original_upload_dir));
 		return $this->original_upload_dir;
 	}
 
@@ -601,6 +602,7 @@ global $wpdb;
 
 	public function filter_upload_dir( $dirs ) {
 		error_log( sprintf('inside filter_upload_dir ====>>>>>>>>>> %s', $dirs));
+		error_log(print_r($dirs));
 		$root_dirs = $this->get_original_upload_dir_root();
 
 		$dirs['path']    = str_replace( $root_dirs['basedir'], 'iu://' . untrailingslashit( $this->bucket ), $dirs['path'] );
