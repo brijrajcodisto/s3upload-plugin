@@ -137,6 +137,7 @@ global $wpdb;
 		add_action( 'shutdown', [ $this, 'stream_wrapper_debug' ] );
 
 		$uploads_url = $this->get_original_upload_dir(); //prime the cached value before filtering
+		error_log(sprintf('upload url is %s', $uploads_url));
 		add_filter( 'upload_dir', [ $this, 'filter_upload_dir' ] );
 
 		//block uploads if permissions are only read/delete
@@ -325,8 +326,10 @@ global $wpdb;
 		if ( empty( $this->original_upload_dir ) ) {
 			$this->original_upload_dir = wp_get_upload_dir();
 		}
-		error_log( sprintf( 'inside get_original_upload_dir ====>>>>>>>>>> %s', $this->original_upload_dir));
+		error_log( sprintf( 'inside get_original_upload_dir ====>>>>>>>>>>'));
 		error_log(print_r($this->original_upload_dir));
+		echo 'Origin dir path';
+		print_r($this->original_upload_dir);
 		return $this->original_upload_dir;
 	}
 
