@@ -325,7 +325,7 @@ global $wpdb;
 		if ( empty( $this->original_upload_dir ) ) {
 			$this->original_upload_dir = wp_get_upload_dir();
 		}
-
+		error_log('inside get_original_upload_dir ====>>>>>>>>>>');
 		return $this->original_upload_dir;
 	}
 
@@ -595,10 +595,12 @@ global $wpdb;
 		$name = pathinfo( $filename, PATHINFO_FILENAME );
 		// The iu:// streamwrapper support listing by partial prefixes with wildcards.
 		// For example, scandir( iu://bucket/2019/06/my-image* )
+		error_log('inside get_files_for_unique_filename_file_list ====>>>>>>>>>>');
 		return scandir( trailingslashit( $dir ) . $name . '*' );
 	}
 
 	public function filter_upload_dir( $dirs ) {
+		error_log('inside filter_upload_dir ====>>>>>>>>>>');
 		$root_dirs = $this->get_original_upload_dir_root();
 
 		$dirs['path']    = str_replace( $root_dirs['basedir'], 'iu://' . untrailingslashit( $this->bucket ), $dirs['path'] );
